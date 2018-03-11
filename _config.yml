@@ -4,4 +4,3 @@ plugins:
   - jekyll-sitemap
   - jekyll-avatar
   - jemoji
-  - jekyll-include-cache
