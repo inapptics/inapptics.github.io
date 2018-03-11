@@ -15,7 +15,7 @@ body {
 
 
 .nav-menu {
-  position: sticky;
+  position: fixed;
   float: left;
   margin: 20px 40px;
   width: 220px;
@@ -24,4 +24,8 @@ body {
 .main-content {
   float: left;
   margin-left: 240px;
+}
+
+span.header {
+  font-size: 80px;
 }
