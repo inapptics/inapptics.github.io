@@ -10,5 +10,15 @@ body {
 }
 
 .header-logo {
-  max-height: 41px;
+  height: 80px;
+}
+
+
+.nav-menu {
+  position: sticky;
+  float: left;
+}
+
+.main-content {
+  float: left;
 }
