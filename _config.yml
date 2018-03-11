@@ -1,4 +1,4 @@
-theme: jekyll-theme-cayman
+theme: aviator-jekyll-template
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
