@@ -1,10 +1,12 @@
 ---
-title: API Reference
-position: 3
+title: SDK Integration (Manual)
+position: 1
 parameters:
   - name: 
     content: 
 content_markdown: |-
+  You'll need an App Token in order to proceed. In case you don't have one yet, add an app [here]({{site.addnewapplink}}) or get the App Token of your exisiting app [here]({{site.appslink}}).
+
   Welcome to our docs section.
 
   Integrating the Inapptics SDKs require just a single line of code.

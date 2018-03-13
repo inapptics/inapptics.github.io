@@ -1,9 +1,9 @@
 ---
-title: SDK Integration
+title: SDK Integration (Manual)
 position: 1
 parameters:
-  - name: asdasd
-    content: wqrtqwer
+  - name:
+    content:
 content_markdown: |-
   Welcome to our docs section.
 
@@ -13,10 +13,10 @@ content_markdown: |-
 
   Select a platform to get started:
 
-  * [iOS SDK Integration](#iossdkintegration)
+  * iOS
   * Android
 
-  In addition, you can also [integrate Inapptics with your Slack team](#3rdpartyslack) for essential notifications.
+  In addition, you can also integrate Inapptics with yur Slack team for essential notifications.
 
   This API document is designed for those interested in developing for our platform.
 

@@ -1,9 +1,9 @@
 ---
-title: SDK Integration
-position: 1
+title: Crashes & dSYMs
+position: 4
 parameters:
-  - name:
-    content:
+  - name: 
+    content: 
 content_markdown: |-
   Welcome to our docs section.
 
@@ -13,10 +13,10 @@ content_markdown: |-
 
   Select a platform to get started:
 
-  * iOS
+  * [iOS SDK Integration](#iossdkintegration)
   * Android
 
-  In addition, you can also integrate Inapptics with yur Slack team for essential notifications.
+  In addition, you can also [integrate Inapptics with your Slack team](#3rdpartyslack) for essential notifications.
 
   This API document is designed for those interested in developing for our platform.
 
@@ -33,6 +33,7 @@ content_markdown: |-
 
   Something bad will happen if you do this.
   {: .error }
+
 left_code_blocks:
   - code_block:
     title:
