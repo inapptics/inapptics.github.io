@@ -7,7 +7,7 @@
 		{% seo %}
 
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
-		<link rel="icon" type="image/png" href="/favicon.png">
+		<link rel="icon" href="https://inapptics.com/images/favicon.ico">
 
 		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
 			<script>
@@ -20,8 +20,10 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="{{ site.baseurl }}/js/main.js"></script>
+		<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="d36477c3-ce45-4aaa-901b-f353c003f316";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+		<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 	</head>
-	<body>
+	<body>			
 		<header>
 			<h1>
 				<button type="button" class="open-nav" id="open-nav"></button>
@@ -36,9 +38,8 @@
 			{% include sidebar.html %}
 
 			<p class="copyright">
-				<a href="https://cloudcannon.com/">
-					Template by CloudCannon
-				</a>
+				based on template by <a href="https://cloudcannon.com/">CloudCannon</a><br />
+				&copy;{{ 'now' | date: "%Y" }} Inapptics, Inc. All rights reserved.
 			</p>
 		</header>
 		<div class="main">
