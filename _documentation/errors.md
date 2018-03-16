@@ -13,16 +13,4 @@ content_markdown: |-
   | 403 | Forbidden | We couldn't authenticate you |
 
   All errors will return JSON in the following format:
-left_code_blocks:
-  - code_block: |-
-      {
-        "error": true,
-        "message": "error message here"
-      }
-    title: Response
-    language: json
-right_code_blocks:
-  - code_block:
-    title:
-    language:
 ---

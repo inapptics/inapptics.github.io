@@ -5,6 +5,44 @@ parameters:
   - name: 
     content: 
 content_markdown: |-
+
+  ``` swift
+  import Inapptics
+
+  ...
+
+  func application(application: UIApplication, didFinishLaunchingWithOptions
+                  launchOptions: [NSObject: AnyObject]?) -> Bool
+  {
+      // Override point for customization after application launch.
+
+      ...
+
+      Inapptics.letsGo(withAppToken: "YOUR_APP_TOKEN")
+      return true
+  }
+  ```
+  {: .code-group-start platform="ios" title="Swift" }
+
+  ``` objective_c
+  @import Inapptics;
+
+  ...
+
+  - (BOOL)application:(UIApplication *)application
+          didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
+  {
+      // Override point for customization after application launch.
+
+      ...
+
+      [Inapptics letsGoWithAppToken:@"YOUR_APP_TOKEN"];
+      return YES;
+  }
+  ```
+  {: .code-group title="Objective-C" }
+
+
   You'll need an App Token in order to proceed. In case you don't have one yet, add an app [here]({{site.addnewapplink}}) or get the App Token of your exisiting app [here]({{site.appslink}}).
 
   Welcome to our docs section.
@@ -35,12 +73,4 @@ content_markdown: |-
 
   Something bad will happen if you do this.
   {: .error }
-left_code_blocks:
-  - code_block:
-    title:
-    language:
-right_code_blocks:
-  - code_block:
-    title:
-    language:
 ---

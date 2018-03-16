@@ -22,12 +22,4 @@ content_markdown: |-
 
   Something bad will happen if you do this.
   {: .error }
-left_code_blocks:
-  - code_block:
-    title:
-    language:
-right_code_blocks:
-  - code_block:
-    title:
-    language:
 ---

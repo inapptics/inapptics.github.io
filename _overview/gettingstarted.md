@@ -52,13 +52,4 @@ content_markdown: |-
     $crisp.push(["do", "chat:open"]);
   }
   </script>
-
-left_code_blocks:
-  - code_block:
-    title:
-    language:
-right_code_blocks:
-  - code_block:
-    title:
-    language:
 ---

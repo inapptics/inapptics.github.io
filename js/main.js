@@ -11,15 +11,30 @@ jQuery(function() {
 		$('body').removeClass('nav-open');
 	});
 
-	$("section > div.highlighter-rouge:first-of-type").each(function(i) {
+	var queryParams = window.location.search.substring(1);
+	if (queryParams) {
+		var pair = queryParams.split('=');
+		if (decodeURIComponent(pair[0]) == 'app_token') {
+			var token = decodeURIComponent(pair[1]);
+			$	("span.s").each(function(){
+				var text = $(this).text();
+				if (text.indexOf("YOUR_APP_TOKEN") !== -1) {
+					$(this).text(text.replace("YOUR_APP_TOKEN", token));
+				}
+			});
+		}
+	}
+
+
+	$("section > div.code-group-start").each(function(i) {
 
 		var $this = $(this).before("<ul class=\"languages\"></ul>"),
 		$languages = $this.prev(),
-		$notFirst = $this.nextUntil(":not(div.highlighter-rouge)"),
-		$all = $this.add($notFirst);
+		$notFirst = $this.nextUntil(":not(div.code-group)"),
+		$all = $this.add($notFirst),
+		$platform = $this.attr("platform");
 
-		$all.add($languages).wrapAll("<div class=\"code-viewer\"></div>");
-
+		$all.add($languages).wrapAll("<div class=\"code-viewer\" platform=\"" + $platform + "\"></div>");
 
 		listLanguages($all, $languages);
 
@@ -29,18 +44,39 @@ jQuery(function() {
 		$languages.find('a').first().addClass('active');
 
 		$languages.find('a').click(function() {
-			$all.css('display', 'none');
-			$all.eq($(this).parent().index()).css('display', 'block');
+			var $this = $(this);
+			var $platform = $this.parent().parent().parent().attr("platform");
+			var $title = $this.text();
 
-			$languages.find('a').removeClass('active');
-			$(this).addClass('active');
+			$("section div.code-viewer").each(function(i) {
+				if ($(this).attr("platform") == $platform) {
+					var $block = $(this);
+					var $languages = $block.find("ul.languages");
+
+					$all = $block.children("div.highlighter-rouge");
+
+					$all.css('display', 'none');
+					$all.eq($this.parent().index()).css('display', 'block');
+	
+					$languages.find('a').removeClass('active');
+
+					$languages.find('a').each(function() {
+						if ($(this).text() == $title) {
+							$(this).addClass('active');	
+						}
+					});
+				}
+			});
+						
 			return false;
 		});
 
 		if ($languages.children().length === 0) {
 			$languages.remove();
 		}
+
 	});
+
 
 	function listLanguages($el, $insert) {
 		$el.each(function(i) {
