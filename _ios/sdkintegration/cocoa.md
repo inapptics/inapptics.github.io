@@ -1,31 +1,18 @@
 ---
-title: SDK Integration (CocoaPods)
-position: 1
+title: CocoaPods
+position: 1.1
 parameters:
   - name: 
     content: 
 content_markdown: |-
-  [addnewapplink]: https://app.inapptics.com/?action=add-app
-  [appslink]: https://google.com
-  [dashboardlink]: https://google.com
+  [dashboardlink]: https://app.inapptics.com/dashboard
 
-  You'll need an App Token in order to proceed. In case you don't have one yet, add an app [here][addnewapplink]{:target="_blank"} or get the App Token of your exisiting app [here][appslink]{:target="_blank"}.
-  {: .info }
-
-  We support apps running on iOS 8.0 and later.
-  {: .warning }
-
-  Please note that an App Token can be used with a single Bundle ID and make sure the same App token isn't used in another app/target with a different Bundle ID.
-  {: .error }
-  
-  ---
-
-  #### Step 1:
+  ##### Step 1:
   Create a `Podfile` in your project's root directory, if you don't have one yet.
   
   ---
   
-  #### Step 2:
+  ##### Step 2:
   Add the `Inapptics` pod to the target in your `Podfile`:
   ``` bash
   target 'YOUR TARGET'
@@ -36,33 +23,32 @@ content_markdown: |-
   
   ---
   
-  #### Step 3:
+  ##### Step 3:
   Run this in terminal:
   ``` bash
   pod repo update && pod install
   ```
 
-  `repo update` ensures that you install the latest version of Inapptics SDK.
+  `repo update` ensures that you install the latest version of **Inapptics SDK**.
   {: .info }
 
     ---
 
-  #### Step 4:
-
+  ##### Step 4:
   Open your project using the generated *.xcworkspace file.
 
   ---
 
-  #### Step 5:
+  ##### Step 5:
   Finally edit your `AppDelegate` file:
 
   1. Import the `Inapptics` module
   2. Initialize `Inapptics` in the `-application:didFinishLaunchingWithOptions:` method:
 
+  ---
   ``` swift
   import Inapptics
 
-  ...
 
   func application(application: UIApplication, didFinishLaunchingWithOptions
                   launchOptions: [NSObject: AnyObject]?) -> Bool
@@ -75,12 +61,11 @@ content_markdown: |-
       return true
   }
   ```
-  {: .code-group-start platform="ios" title="Swift" }
+  {: .code-group-start title="Swift" }
 
   ``` objective_c
   @import Inapptics;
 
-  ...
 
   - (BOOL)application:(UIApplication *)application
           didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
@@ -94,4 +79,11 @@ content_markdown: |-
   }
   ```
   {: .code-group title="Objective-C" }
+
+  ![AppDelegate](images/app-delegate.png)
+
+  ---
+
+  Congratulations! **Inapptics** is now integrated into your project target. Perform a session on your app, go to the background and you'll see the data on your [Dashboard][dashboardlink]{:target="_blank"} in less than a minute.
+  {: .success }
 ---

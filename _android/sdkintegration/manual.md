@@ -1,9 +1,9 @@
 ---
-title: API Reference
-position: 2
+title: Manual
+position: 1.2
 parameters:
-  - name: 
-    content: 
+  - name:
+    content:
 content_markdown: |-
   Welcome to our docs section.
 

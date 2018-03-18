@@ -6,6 +6,8 @@ title: API Docs
 {% for collection in sorted_collections %}	
 	{% assign sorted_docs = collection.docs | sort: "position" %}
 	{% for doc in sorted_docs %}
+		{% assign rounded_position = doc.position | round %}
+
 		<section class="doc-content">
 			<section class="left-docs">
 				{% if collection.position != 1 and doc.position == 1 %}
@@ -15,25 +17,27 @@ title: API Docs
 						</a>
 					</h1>
 				{% endif %}
-				<h3>
+				
+				<{% if rounded_position != doc.position %}h4{% else %}h3{% endif %}>
 					<a id="{% if doc.position != 1 or collection.position == 1 %}{{ doc.id | replace: '/', '' | replace: '.', '' }}{% endif %}">
 						{{ doc.title }}
-						{% if doc.type %}
-							<span class="endpoint {{ doc.type }}"></span>
+						{% if doc.from_version %}
+							<span class="version" title="Available from SDK Version {{doc.from_version}}">{{doc.from_version}}</span>
 						{% endif %}
+
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/{{ doc.relative_path }}">Edit</a>
-				</h3>
+				</{% if rounded_position != doc.position %}h4{% else %}h3{% endif %}>
+
 				{% if doc.description %}
-					<p class="description">{{ doc.description }}</p>
+					{{ doc.description | markdownify | replace: '<p>', '<p class="description">' }}					
 				{% endif %}
 
 				{% if doc.parameters and doc.parameters[0].name %}
-						<h6>Parameters</h6>
+						<h6><u>Parameters</u></h6>
 						<dl>
 								{% for parameter in doc.parameters %}
-										<dt>{{ parameter.name }}</dt>
-										<dd>{{ parameter.content }}</dd>
+									<dt class="code">{{ parameter.name }}</dt>
+									{{ parameter.content | markdownify | replace: '<p>', '<dd>' | replace: '</p>', '</dd>' }}
 								{% endfor %}
 						</dl>
 				{% endif %}

@@ -5,32 +5,8 @@ parameters:
   - name: 
     content: 
 content_markdown: |-
-  Welcome to our docs section.
+  Although getting started with **Inapptics** requires a single line of code, the API Reference dives deeper into the advanced functionality.
 
-  Integrating the Inapptics SDKs require just a single line of code.
-
-  ---
-
-  Select a platform to get started:
-
-  * [iOS SDK Integration](#iossdkintegration)
-  * Android
-
-  In addition, you can also [integrate Inapptics with your Slack team](#3rdpartyslack) for essential notifications.
-
-  This API document is designed for those interested in developing for our platform.
-
-  This API is still under development and will evolve.
-
-  You'll succeed if you do this.
-  {: .success }
-
-  Here's some useful information.
-  {: .info }
-
-  Something may not happen if you try and do this.
+  We support apps running on iOS 8.0 and later.
   {: .warning }
-
-  Something bad will happen if you do this.
-  {: .error }
 ---

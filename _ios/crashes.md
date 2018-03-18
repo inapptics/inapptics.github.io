@@ -1,36 +1,12 @@
 ---
 title: Crashes & dSYMs
-position: 4
+position: 2
 parameters:
   - name: 
     content: 
 content_markdown: |-
-  Welcome to our docs section.
-
-  Integrating the Inapptics SDKs require just a single line of code.
-
-  ---
-
-  Select a platform to get started:
-
-  * [iOS SDK Integration](#iossdkintegration)
-  * Android
-
-  In addition, you can also [integrate Inapptics with your Slack team](#3rdpartyslack) for essential notifications.
-
-  This API document is designed for those interested in developing for our platform.
-
-  This API is still under development and will evolve.
-
-  You'll succeed if you do this.
-  {: .success }
-
-  Here's some useful information.
-  {: .info }
-
-  Something may not happen if you try and do this.
-  {: .warning }
-
-  Something bad will happen if you do this.
-  {: .error }
+  Inapptics SDK captures all crashes that happen in the app. Initially, a crash contains not so relevant hex numbers and file addresses.
+  In order to convert those into readable functions and file names, the crash needs to be symbolicated.
+  Inapptics will try to do this on device, but, depending on your app's project configurations, this might not be possible. In that case Inapptics will need special files related to the build version on which the crash occurred. Those are dSYMs.
+  If there is a crash in your dashboard that is not symbolicated, you will see an "Upload dSYM file" button in its detail page.
 ---

@@ -31,10 +31,9 @@ jQuery(function() {
 		var $this = $(this).before("<ul class=\"languages\"></ul>"),
 		$languages = $this.prev(),
 		$notFirst = $this.nextUntil(":not(div.code-group)"),
-		$all = $this.add($notFirst),
-		$platform = $this.attr("platform");
+		$all = $this.add($notFirst);
 
-		$all.add($languages).wrapAll("<div class=\"code-viewer\" platform=\"" + $platform + "\"></div>");
+		$all.add($languages).wrapAll("<div class=\"code-viewer\"></div>");
 
 		listLanguages($all, $languages);
 
@@ -45,27 +44,24 @@ jQuery(function() {
 
 		$languages.find('a').click(function() {
 			var $this = $(this);
-			var $platform = $this.parent().parent().parent().attr("platform");
 			var $title = $this.text();
 
 			$("section div.code-viewer").each(function(i) {
-				if ($(this).attr("platform") == $platform) {
-					var $block = $(this);
-					var $languages = $block.find("ul.languages");
+				var $block = $(this);
+				var $languages = $block.find("ul.languages");
 
-					$all = $block.children("div.highlighter-rouge");
+				$all = $block.children("div.highlighter-rouge");
 
-					$all.css('display', 'none');
-					$all.eq($this.parent().index()).css('display', 'block');
-	
-					$languages.find('a').removeClass('active');
+				$all.css('display', 'none');
+				$all.eq($this.parent().index()).css('display', 'block');
 
-					$languages.find('a').each(function() {
-						if ($(this).text() == $title) {
-							$(this).addClass('active');	
-						}
-					});
-				}
+				$languages.find('a').removeClass('active');
+
+				$languages.find('a').each(function() {
+					if ($(this).text() == $title) {
+						$(this).addClass('active');	
+					}
+				});
 			});
 						
 			return false;

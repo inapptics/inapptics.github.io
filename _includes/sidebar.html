@@ -2,19 +2,19 @@
 	{% assign sorted_collections = site.collections | sort: "position" %}
 	{% for collection in sorted_collections %}
 		{% if collection.label != "posts" %}
+
 			<section>
-				<h6>{{collection.docs.count}} <i class="{{ collection.icon }}" style="width: 20px;"></i> {{ collection.title }}</h6>
+				<h6> <i class="{{ collection.icon }}" style="width: 20px;"></i> {{ collection.title }}</h6>
 				<ul>
 					{% assign sorted_docs = collection.docs | sort: "position" %}
 					{% for doc in sorted_docs %}
+						{% assign rounded_position = {doc.position | round %}
 						<li>
-							<!--
-							<a href="{% if page.url != '/' %}/{% endif %}#{% if doc.position == 1 %}{{collection.label}}_{% endif %}{{ doc.id | replace: '/', '' | replace: '.', '' }}"></a>
-							-->
-							<a href="{% if page.url != '/' %}/{% endif %}#{{ doc.id | replace: '/', '' | replace: '.', '' }}">
+							<a href="{% if page.url != '/' %}/{% endif %}#{{ doc.id | replace: '/', '' | replace: '.', '' }}"
+							{% if rounded_position != doc.position %}class="level3"{% endif %}>
 								<i class="{{doc.icon}}" style="width: 20px;"></i>
 								{{ doc.title }}
-								{% if doc.type %}<span class="endpoint {{ doc.type }}"></span>{% endif %}
+								{% if doc.from_version %}<span class="version" title="Available from SDK Version {{doc.from_version}}">{{doc.from_version}}</span>{% endif %}
 							</a>
 						</li>
 					{% endfor %}

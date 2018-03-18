@@ -1,16 +1,8 @@
-# ----
-# Site
-
 title: Inapptics
 description: Jekyll template for API documentation.
 url: https://docs.inapptics.com
 google_analytics_key:
 permalink: pretty
-
-# -----
-# Build
-
-timezone: Etc/UTC
 
 collections:
   overview:
@@ -29,13 +21,9 @@ collections:
     title: 3rd Party Integrations
     icon: fas fa-cogs
     position: 4
-    
-  documentation:
-    title: Documentation
+  samples:
+    title: Samples
     position: 5
-  api:
-    title: APIs
-    position: 6
 
 plugins:
   - jekyll-sitemap
@@ -51,50 +39,3 @@ defaults:
       path: ""
     values:
       layout: default
-  -
-    scope:
-      type: "documentation"
-    values:
-      _hide_content: true
-  -
-    scope:
-      type: "api"
-    values:
-      _hide_content: true
-
-# -----------
-# CloudCannon
-
-types:
-  - get
-  - put
-  - delete
-  - post
-
-languages:
-  bash: Bash
-  c: C
-  css: CSS
-  html: HTML
-  java: Java
-  javascript: JavaScript
-  json: JSON
-  php: PHP
-  python: Python
-  ruby: Ruby
-  kotlin: Kotlin
-  objectivec: Objective-C
-  swift: Swift
-
-
-_options:
-  content_markdown:
-    format: p h4 h5 h6
-    bold: true
-    italic: true
-    link: true
-    bulletedlist: true
-    numberedlist: true
-    image: true
-    table: true
-    styles: /css/editor.css
