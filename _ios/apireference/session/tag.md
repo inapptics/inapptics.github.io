@@ -1,7 +1,7 @@
 ---
-title: Initializing Inapptics
-position: 3.01
-description: Initialize **Inapptics SDK** with default functionality.
+title: Session Tag
+position: 3.50
+description: Initialize Inapptics with default functionality using this method.
 from_version: 1.3.5
 parameters:
   - name: appToken
@@ -28,9 +28,7 @@ content_markdown: |-
   ```
   {: .code-group title="Objective-C" }
 
-  Initializes **Inapptics SDK** with **Crash Reporter** enabled and automatically captures all user interaction events in the app.
-
-  Call this method as the first line in **application:didFinishLaunchingWithOptions:** method of your **AppDelegate** file.
+  Initializes **Inapptics** with **Crash Reporter** enabled and automatically captures all user interaction events in the app.
 
   Apart from the `import` statement, this is the only required line of code for using **Inapptics**.
   {: .success }

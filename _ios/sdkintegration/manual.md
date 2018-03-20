@@ -47,7 +47,7 @@ content_markdown: |-
 
 
   ##### Step 7:
-  Finally edit your `AppDelegate` file:
+  Finally, edit your `AppDelegate` file:
 
   1. Import the `Inapptics` module
   2. Initialize `Inapptics` in the `-application:didFinishLaunchingWithOptions:` method:
@@ -91,6 +91,6 @@ content_markdown: |-
 
   ---
 
-  Congratulations! **Inapptics** is now integrated into your project target. Perform a session on your app, go to the background and you'll see the data on your [Dashboard][dashboardlink]{:target="_blank"} in less than a minute.
+  Congratulations! **Inapptics** is now integrated into your project target. Perform a session on your app, press the home button and the data will appear on your [Dashboard][dashboardlink]{:target="_blank"} within less than a minute.
   {: .success }
 ---

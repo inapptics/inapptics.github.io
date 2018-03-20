@@ -9,7 +9,7 @@ content_markdown: |-
   [appslink]: https://google.com
   [dashboardlink]: https://google.com
 
-  You'll need an App Token in order to proceed. In case you don't have one yet, add an app [here][addnewapplink]{:target="_blank"} or get the App Token of your exisiting app [here][appslink]{:target="_blank"}.
+  You'll need an App Token in order to proceed. In case you don't have one yet, add an app [here][addnewapplink]{:target="_blank"} or get the App Token of your existing app [here][appslink]{:target="_blank"}.
   {: .info }
 
   We support apps running on iOS 8.0 and later.

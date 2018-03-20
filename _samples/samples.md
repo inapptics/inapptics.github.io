@@ -12,13 +12,13 @@ parameters:
 content_markdown: |-
   This is a regular paragraph without anything fancy.
 
-  **This is a bold text.** Wrap text in \*\* (double asterix) on both ends to make it bold.
+  **This is a bold text.** Wrap text in \*\* (double asterisk) on both ends to make it bold.
   
-  *This is an italic text.* Wrap text in \* (single asterix) on both ends to make it italic.
+  *This is an italic text.* Wrap text in \* (single asterisk) on both ends to make it italic.
 
   ---
 
-  Add a horizonal line like the one above and below with just \-\-\- on a new line.
+  Add a horizontal line like the one above and below with just \-\-\- on a new line.
 
   ---
 
@@ -47,10 +47,10 @@ content_markdown: |-
 
   Special tabbed code viewer.
 
-  If you want to group differnet code pieces, make sure:
+  If you want to group different code pieces, make sure:
   1. There is nothing between them
   2. Ths first block has the class `.code-group-start`, apart from `title`
-  3. Subsequent blocks must have the class `code-group` and `title`.
+  3. Subsequent blocks must have the class `code-group` and `title`
 
   ``` swift
   import Inapptics

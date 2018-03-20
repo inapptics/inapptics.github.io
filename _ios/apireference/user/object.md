@@ -1,16 +1,11 @@
 ---
-title: Identify App User
-position: 3.6
-description: Set user identity details.
+title: Inapptics User Object
+position: 3.10
+description: Returns a `IAXUserIdentity` instance with currently set user properties.
 from_version: 1.7.0
 parameters:
-  - name: id
-    content: A custom identifier of your user. E.g. the user’s ID in your own user database.
-  - name: email
-    content: App user’s email.
-  - name: name
-    content: App user’s full name.
-     
+  - name: 
+    content: 
 content_markdown: |-
   ##### Declaration
 
@@ -32,7 +27,7 @@ content_markdown: |-
 
   | Property | Type | Description |
   | --- | --- | --- |
-  | `id` | NSString | A custom identifier of your user. E.g. the user's ID in your own user database. |
+  | `id` | NSString | A custom identifier for your user. E.g. the user's ID in your own user database. |
   | `email` | NSString | App user's email. |
   | `name` | NSString | App user's full name. |
   | `properties` | NSDictionary | A dictionary with custom key/value properties for the app user. |

@@ -13,7 +13,7 @@ content_markdown: |-
 
   See how easy it is to get started with **Inapptics**. Simply add our SDK and a single line of code to your app and you are good to go.
 
-  On average in takes 2 minutes to integrate our SDK.
+  On average it takes 2 minutes to integrate our SDK.
   {: .info }
 
   Select a platform to get started:

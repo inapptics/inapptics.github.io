@@ -9,6 +9,7 @@
 					{% assign sorted_docs = collection.docs | sort: "position" %}
 					{% for doc in sorted_docs %}
 						{% assign rounded_position = {doc.position | round %}
+						
 						<li>
 							<a href="{% if page.url != '/' %}/{% endif %}#{{ doc.id | replace: '/', '' | replace: '.', '' }}"
 							{% if rounded_position != doc.position %}class="level3"{% endif %}>

@@ -1,7 +1,7 @@
 ---
-title: Manually Track Close Screen
-position: 3.4
-description: Set a manually tracked screen as closed and register the previous screen a new screen appearance.
+title: Track Custom Close Screen
+position: 3.41
+description: Set a manually tracked screen as closed and register the previous screen as a new screen appearance.
 from_version: 1.6.3
 parameters:
   - name: 

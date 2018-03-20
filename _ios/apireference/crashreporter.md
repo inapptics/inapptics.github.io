@@ -1,6 +1,6 @@
 ---
 title: Crash Reporter
-position: 3.2
+position: 3.02
 description: Optionally initialize Inapptics using this method to be able to disable the **Crash Reporter**.
 from_version: 1.5.4
 parameters:
@@ -12,7 +12,7 @@ content_markdown: |-
   [addnewapplink]: https://app.inapptics.com/?action=add-app
   [appslink]: https://google.com
 
-  In case you don't have an `appToken` yet, add an app [here][addnewapplink]{:target="_blank"} or get the App Token of your exisiting app [here][appslink]{:target="_blank"}.
+  In case you don't have an `appToken` yet, add an app [here][addnewapplink]{:target="_blank"} or get the App Token of your existing app [here][appslink]{:target="_blank"}.
   {: .info }
 
   Please note that an App Token can be used with a single Bundle ID and make sure the same App token isn't used in another app/target with a different Bundle ID.
@@ -34,9 +34,9 @@ content_markdown: |-
 
   Use this method in your AppDelegate instead of the previous method in order to control the **Crash Reporter**.
 
-  We recommend to keep the **Inapptics Crash Reporter** enabled in order to be able to leverage features like **Crash replays**.
+  We recommend keeping the **Inapptics Crash Reporter** enabled in order to be able to leverage features like **Crash replays**.
   {: .info }
 
-  Some other creash reporters, like Crashlytics work fine side by side with **Inapptics Crash Reporter** enabled.
+  Some other crash reporters, like Crashlytics, work fine side by side with **Inapptics Crash Reporter** enabled.
   {: .success }
 ---
