@@ -15,13 +15,13 @@ content_markdown: |-
 
   ![Upload dSYM](images/upload-dsym-button.png)
 
-  There are two main steps in symbolicating a crash report:
+  There are two main steps in **symbolicating** a crash report:
   1. Symbolicate system method calls (iOS Frameworks and Libraries)
   2. Symbolicate app mathod calls (Your code)
 
   We maintain a database of **dSYM** files for iOS Frameworks and Libraries and are able to **symbolicate** the backtraces of method calls by iOS.
 
-  For symbolicating method calls in your code, **Inapptics SDK** will try to do this on the device without requiring a **dSYM** file, but depending on your project configuration, this may not be possible.
+  For **symbolicating** method calls in your code, **Inapptics SDK** will try to do this on the device without requiring a **dSYM** file, but depending on your project configuration, this may not be possible.
 
   In this case, we'll need the the specific **dSYM** file generated during the build process of your app.
 
@@ -59,9 +59,9 @@ content_markdown: |-
 
   ###### Products Folder
 
-  When building an app in XCode, it compiles the code and saves the built app along with dSYMs in a designated directory. The directory location varies based on build configuration.
+  When building an app in **Xcode**, it compiles the code and saves the built app along with dSYMs in a designated directory. The directory location varies based on build configuration.
 
-  Open your project in XCode, locate the **"Products"** folder in the Project Navigator on the left. Control-click on **"Products"** folder and select **Show in Finder**. This will open the folder where your app and its latest **dSYM** are located.
+  Open your project in **Xcode**, locate the **"Products"** folder in the Project Navigator on the left. Control-click on **"Products"** folder and select **Show in Finder**. This will open the folder where your app and its latest **dSYM** are located.
 
   ![Xcode Products](images/xcode-products.png)
 
@@ -71,9 +71,9 @@ content_markdown: |-
   ###### xarchives
 
   If you are looking for the **dSYM** for a project archive, follow these steps:
-  1. Open XCode's **"Organizer Window"** *(Window -> Organizer)*
-  2. Select your app from the list of apps on the left
-  3. Select the archive from the list of archives on the right
+  1. Open Xcode's **"Organizer Window"** *(Window -> Organizer)*
+  2. Select your app from the list of apps on the left pane
+  3. Select the archive from the list of archives
   4. Control-click on the selected archive and select **Show in Finder**
   ![Xcode Organizer](images/xcode-organizer.png)
   
@@ -83,8 +83,59 @@ content_markdown: |-
   
   ##### Bitcode
 
+  In 2015, Apple introduced **Bitcode**, which means instead of uploading a binary with all the architectures to be supported a bitcode compiled binary is uploaded and re-compiled into separate binaries for all the necessary architectures on Apple servers. This means when your users download your app from the **AppStore**, a much smaller binary supporting just the architecture of user's device is being downloaded.
+
+  Bitcode has a direct impact on **dSYM**s because the binary is being re-compliled and as a result new **dSYM**s for each separate binary are being generated. Since this is happening on Apple's servers, there is no copy of the **dSYM**s on the machine it was originally built on.
+
+  But, Apple provides the functionality for downloading the new **dSYM**s whenever you need them. And one of the cases you'll need them is when we need a **dSYM** to **symbolicate** a crash captured by **Inapptics SDK**.
+
+  **Bitcode** is now mandatory for publishing apps to the **AppStore**.
+  {: .warning }
+
+  ###### Xcode Organizer
+
+  Follow these steps to get the **dSYM**s for build that was uploaded to **iTunes Connect**:
+  1. Open **Xcode**'s **"Organizer Window"** *(Window -> Organizer)*
+  2. Select your app from the list of apps on the left pane
+  3. Select the archive from the list of archives
+  4. Click on **"Download dSYMs..."** button on the right pane
+  5. **Xcode** will connect to your **iTunes Connect** account and download and add the **dSYM**s to the **```xcarchive```**.
+  6. The folder containing the **dSYM** files should automatically open in **Finder**. *In case the folder does not open automatically, follow the steps for **```xcarchive```** (previous section) starting from step 4.*
+
+  ###### iTunes Connect
+
+  In case **Xcode* fails to download the **dSYM**s you can download them directly on **iTunes Connect** by following these steps:
+  1. Go to [https://itunesconnect.apple.com/](https://itunesconnect.apple.com/)
+  2. Click on **"My Apps"**
+  3. Select the app you need **dSYM**s for
+  4. Click on **"Activity"** tab
+  5. Select the build you need **dSYM**s for
+  6. On the build details page, click on the **"Download dSYM"** button
+  ![iTunes Connect dSYM Download](images/itunes-dsym-download.png)
   
 
-  Inapptics will try to do this on the device, but depending on your app's project configurations this may not be possible. In that case, Inapptics will need special files related to the build version on which the crash occurred. Those are **dSYM**s.
-  If there is a crash in your dashboard that is not **symbolicated**, you will see an "Upload **dSYM** file" button in its detail page.
+  ---
+
+  ##### Verifying dSYM UUID
+
+  In order to verify that you have the **dSYM** matching with the **UUID** run this command in terminal:
+  ``` bash
+  dwarfdump -u YOUR_DSYM_PATH
+  ```
+
+  ##### Uploading dSYM
+
+  Once you have the matching **dSYM** file, click on the **"Upload dSYM"** button either on the **Crash List** or **Crash Detail** page.
+
+  ![Upload dSYM](images/upload-dsym-popup.png)
+  
+  **dSYM** files are actually folders and since browser support for folder upload is still very limited we need you to `zip` the **dSYM** and upload the `zip` file.
+  {: .warning }
+
+  You can also upload multiple **dSYM**s at once by archiving them in a single `zip` file. We will extract and match the **dSYM**s with their corresponding crashes.
+  {: .success }
+
+  The process of matching **dSYM**s with crashes and **symbolicating** them takes few minutes. Once the process is completed, you should see function names and line numbers instead of memory addresses.
+  {: .info }
+
 ---

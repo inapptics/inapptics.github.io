@@ -6,5 +6,7 @@ parameters:
   - name:
     content:
 content_markdown: |-
-  Text about slack integration
+  ![Inapptics + Slack](images/inapptics-slack.png)
+
+  
 ---
