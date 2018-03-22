@@ -4,26 +4,23 @@ url: https://docs.inapptics.com
 google_analytics_key:
 permalink: pretty
 
+collections_dir: content
 collections:
   overview:
     title: Overview
-    icon: fas fa-home
     position: 1
-  ios:
-    title: iOS
-    icon: fab fa-apple
+  sdkintegration:
+    title: SDK Integration
     position: 2
-  android:
-    title: Android
-    icon: fab fa-android
+  apireference:
+    title: API Reference
     position: 3
   3rdparty:
     title: 3rd Party Integrations
-    icon: fas fa-cogs
     position: 4
   samples:
     title: Samples
-    position: 5
+    position: 9
 
 plugins:
   - jekyll-sitemap
