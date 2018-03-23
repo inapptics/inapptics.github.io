@@ -22,7 +22,7 @@ content_markdown: |-
   ``` java
   + (IAXUserIdentity * _Nonnull)user;
   ```
-  {: .code-group title="JAVA" }
+  {: .code-group title="Java" }
 
   ``` kotlin
   + (IAXUserIdentity * _Nonnull)user;
@@ -62,7 +62,7 @@ content_markdown: |-
   NSLog(@"%@", Inapptics.user.name);
   NSLog(@"%@", Inapptics.user.properties[@"YOUR_CUSTOM_KEY"]);
   ```
-  {: .code-group title="JAVA" }
+  {: .code-group title="Java" }
 
   ``` kotlin
   NSLog(@"%@", Inapptics.user.id);

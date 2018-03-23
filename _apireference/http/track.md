@@ -1,11 +1,11 @@
 ---
 title: Track HTTP Requests
 position: 5.01
-description: Manually add a new screen to the ongoing user session.
+description: Track HTTP requests with this method
 from_version: 3.0
 parameters:
-  - name: screenName
-    content: Custom screen name for the manually tracked screen.
+  - name: someParam
+    content: some param description
 content_markdown: |-
   Please make sure to call this method only after the manually tracked screen has finished appearing.
   {: .error }

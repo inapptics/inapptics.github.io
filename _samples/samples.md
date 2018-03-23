@@ -106,7 +106,7 @@ content_markdown: |-
     }
   }
   ```
-  {: .code-group title="JAVA" }
+  {: .code-group title="Java" }
 
   ---
 
@@ -162,7 +162,7 @@ content_markdown: |-
     }
   }
   ```
-  {: .code-group title="JAVA" }
+  {: .code-group title="Java" }
 
 
   ---

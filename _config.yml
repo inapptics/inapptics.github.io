@@ -4,7 +4,6 @@ url: https://docs.inapptics.com
 google_analytics_key:
 permalink: pretty
 
-collections_dir: content
 collections:
   overview:
     title: Overview
