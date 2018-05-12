@@ -7,7 +7,7 @@ parameters:
     content: 
 content_markdown: |-
   [dashboardlink]: https://app.inapptics.com/dashboard
-  [sdkdownloadlink]: https://todo/Inapptics.zip
+  [sdkdownloadlink]: https://s3.amazonaws.com/inapptics-cdn-ko0ld/sdk/android/inapptics-sdk.aar
 
   ##### Step 1:
   Download the **Inapptics SDK** [here][sdkdownloadlink].
@@ -15,24 +15,36 @@ content_markdown: |-
   ---
   
   ##### Step 2:
-  Add downloaded `aar` file to `{Project}/{AppModule}/libs` folder.
+  In Android Studio click `File > New > New Module...`.
   
   ---
   
   ##### Step 3:
-  Check if you have line `implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])` in your `build.gradle`, so gradle will scan `libs` folder and include all `jar` and `aar` files from there.
+  Select `Import .JAR/.AAR Package`.
+
+  ---
 
   ##### Step 4:
-  Click `Sync Project with Gradle Files` and rebuild your project, so Android Studio will see new library.
-
-  ![Sync Project with Gradle Files](images/sync_project_with_gradle_files.png)
+  Provide path to downloaded aar file from step 1 and click `Finish`.
 
   ---
 
   ##### Step 5:
-  Finally, initialize Inapptics in `onCreate` method of your entry Activities:
+  Click `File > Project Structure`
 
   ---
+
+  ##### Step 6:
+  Select your app module from listed modules, then click on `Dependencies`, then on the plus sign where you can click `Module dependency`.
+  From available modules select library module that you created in steps 2-4 and click `OK`.
+
+  ![Module dependency](images/sdk_integration_android_module_dependency.png)
+
+  ---
+
+  ##### Step 77:
+  Finally, initialize Inapptics in `onCreate` method of your entry Activities:
+
   ``` java
   import android.app.Activity;
   import android.os.Bundle;
