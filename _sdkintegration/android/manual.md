@@ -42,7 +42,7 @@ content_markdown: |-
 
   ---
 
-  ##### Step 77:
+  ##### Step 7:
   Finally, initialize Inapptics in `onCreate` method of your entry Activities:
 
   ``` java
