@@ -15,12 +15,12 @@ content_markdown: |-
   ---
   
   ##### Step 2:
-  Add downloaded aar file to `{Project}/{AppModule}/libs' folder.
+  Add downloaded `aar` file to `{Project}/{AppModule}/libs` folder.
   
   ---
   
   ##### Step 3:
-  Check if you have line `implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])` in your `build.gradle`.
+  Check if you have line `implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])` in your `build.gradle`, so gradle will scan `libs` folder and include all `jar` and `aar` files from there.
 
   ##### Step 4:
   Click `Sync Project with Gradle Files` and rebuild your project, so Android Studio will see new library.
