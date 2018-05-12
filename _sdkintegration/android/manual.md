@@ -23,9 +23,9 @@ content_markdown: |-
   Check if you have line `implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])` in your `build.gradle`.
 
   ##### Step 4:
-  Click `'`Sync Project with Gradle Files`'` and rebuild your project, so Android Studio will see new library.
+  Click `Sync Project with Gradle Files` and rebuild your project, so Android Studio will see new library.
 
-  ![Embedded Binaries](images/sync_project_with_gradle_files.png)
+  ![Sync Project with Gradle Files](images/sync_project_with_gradle_files.png)
 
   ---
 
