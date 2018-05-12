@@ -9,79 +9,104 @@ content_markdown: |-
   [dashboardlink]: https://app.inapptics.com/dashboard
 
   ##### Step 1:
-  Create a `Podfile` in your project's root directory, if you don't have one yet.
+  Open `build.gradle` for your app's module.
   
   ---
   
   ##### Step 2:
-  Add the `Inapptics` pod to the target in your `Podfile`:
-  ``` bash
-  target 'YOUR TARGET'
+  Add the `implementation 'com.inapptics.sdk:android-sdk:0.9'` dependency in your `build.gradle`:
+  ``` groovy
+  dependencies {
+    implementation 'com.inapptics.sdk:android-sdk:0.9'
     ...
-    pod 'Inapptics'
-  end
+  }
   ```
   
   ---
   
   ##### Step 3:
-  Run this in terminal:
-  ``` bash
-  pod repo update && pod install
-  ```
+  Click on `Sync Now`.
 
-  `repo update` ensures that you install the latest version of **Inapptics SDK**.
-  {: .info }
-
-    ---
+  ---
 
   ##### Step 4:
-  Open your project using the generated *.xcworkspace file.
+  Finally, initialize Inapptics in `onCreate` method in one of 2 classes:
+
+  A. Your custom Application subclass:
 
   ---
+  ``` java
+  import android.app.Application;
 
-  ##### Step 5:
-  Finally, edit your `AppDelegate` file:
+  import com.inapptics.sdk.Inapptics;
 
-  1. Import the `Inapptics` module
-  2. Initialize `Inapptics` in the `-application:didFinishLaunchingWithOptions:` method:
+  public class MyCustomApplication extends Application {
+
+    @Override
+    public void onCreate() {
+      super.onCreate();
+      Inapptics.letsGo("YOUR_APP_TOKEN", this);
+    }
+  }
+  ```
+  {: .code-group-start title="Java" }
+
+  ``` kotlin
+  import android.app.Application
+  
+  import com.inapptics.sdk.Inapptics
+
+  class MyCustomApplication : Application() {
+
+      override fun onCreate() {
+          super.onCreate()
+          Inapptics.letsGo("YOUR_APP_TOKEN", this)
+      }
+  }
+  ```
+  {: .code-group title="Kotlin" }
+
+  B. Your main/entry Activity:
 
   ---
-  ``` swift
-  import Inapptics
+  ``` java
+  import android.app.Activity;
+  import android.os.Bundle;
 
+  import com.inapptics.sdk.Inapptics;
 
-  func application(application: UIApplication, didFinishLaunchingWithOptions
-                  launchOptions: [NSObject: AnyObject]?) -> Bool
-  {
-      // Override point for customization after application launch.
+  public class MyMainActivity extends Activity {
 
-      ...
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
 
-      Inapptics.letsGo(withAppToken: "YOUR_APP_TOKEN")
-      return true
+      Inapptics.letsGo("YOUR_APP_TOKEN", this);
+
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main);
+    }
   }
   ```
-  {: .code-group-start title="Swift" }
+  {: .code-group-start title="Java" }
 
-  ``` objective_c
-  @import Inapptics;
+  ``` kotlin
+  import android.app.Activity
+  import android.os.Bundle
 
+  import com.inapptics.sdk.Inapptics
 
-  - (BOOL)application:(UIApplication *)application
-          didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
-  {
-      // Override point for customization after application launch.
+  class MyMainActivity : Activity() {
 
-      ...
+      override fun onCreate(savedInstanceState: Bundle?) {
 
-      [Inapptics letsGoWithAppToken:@"YOUR_APP_TOKEN"];
-      return YES;
+          Inapptics.letsGo("YOUR_APP_TOKEN", this)
+
+          super.onCreate(savedInstanceState)
+          setContentView(R.layout.activity_main)
+      }
   }
   ```
-  {: .code-group title="Objective-C" }
-
-  ![AppDelegate](images/app-delegate.png)
+  {: .code-group title="Kotlin" }
 
   ---
 
