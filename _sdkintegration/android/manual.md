@@ -30,43 +30,7 @@ content_markdown: |-
   ---
 
   ##### Step 5:
-  Finally, initialize Inapptics in `onCreate` method in one of 2 classes:
-
-  A. Your custom Application subclass:
-
-  ---
-  ``` java
-  import android.app.Application;
-
-  import com.inapptics.sdk.Inapptics;
-
-  public class MyCustomApplication extends Application {
-
-    @Override
-    public void onCreate() {
-      super.onCreate();
-      Inapptics.letsGo("YOUR_APP_TOKEN", this);
-    }
-  }
-  ```
-  {: .code-group-start title="Java" }
-
-  ``` kotlin
-  import android.app.Application
-  
-  import com.inapptics.sdk.Inapptics
-
-  class MyCustomApplication : Application() {
-
-      override fun onCreate() {
-          super.onCreate()
-          Inapptics.letsGo("YOUR_APP_TOKEN", this)
-      }
-  }
-  ```
-  {: .code-group title="Kotlin" }
-
-  B. Your main/entry Activity:
+  Finally, initialize Inapptics in `onCreate` method of your entry Activities:
 
   ---
   ``` java
